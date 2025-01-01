@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View User</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #faf8fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    div {
+        width: 80%;
+        max-width: 800px;
+        background-color: #e9bfe3;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #c404c4;
+        font-size: 35px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid #e6dee5;
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    th {
+        background-color: #b465a7;
+        color: #fff;
+        font-size: 20px;
+    }
+
+
+
+    a {
+        color: #9e2d95;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 0 5px;
+
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <div align="center">
+        <h2>View user</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Srno</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Dedline</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% record.map((val, i)=> { %>
+                    <tr>
+                        <td>
+                            <%= ++i %>
+                        </td>
+                        <td>
+                            <%= val.task %>
+                        </td>
+                        <td>
+                            <%= val.status %>
+                        </td>
+                        <td>
+                            <%= val.dedline %>
+                        </td>
+                        <td>
+                            <a href="/deleteuser?deleteId=<%= val.id %>"> Delete</a>
+                            <a href=" edituser?id=<%= val.id %>"> Edit</a>
+                        </td>
+                        </td>
+
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <a href="/add">Add</a>
+    </div>
+</body>
