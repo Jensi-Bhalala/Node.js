@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram UI Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #fafafa;
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            height: 100vh;
+            background: #fff;
+            padding: 20px;
+            border-right: 1px solid #dbdbdb;
+            overflow-y: auto;
+            /* Enables vertical scrolling */
+            max-height: 100vh;
+            /* Ensures it doesn't exceed the viewport height */
+            
+        }
+
+
+        .sidebar .nav-link {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            color: #262626;
+            margin: 10px 0;
+        }
+
+        .sidebar .nav-link:hover {
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+
+
+        .sidebar .nav-link i {
+            margin-right: 10px;
+        }
+
+        .feed {
+            margin-left: 270px;
+            max-width: 600px;
+        }
+
+        .suggestions {
+            position: fixed;
+            right: 20px;
+            top: 80px;
+            width: 300px;
+        }
+
+        .suggestions h5 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .suggestions a {
+            color: #0095f6;
+            font-weight: 600;
+            border: 2px solid #0095f6;
+            border-radius: 25px;
+            padding: 5px 10px 5px 10px;
+        }
+
+        .suggestions p {
+            font-size: 14px;
+            color: #8e8e8e;
+        }
+
+        a {
+            text-decoration: none;
+            color: #262626;
+        }
+
+        .story img,
+        .profile-img {
+            border-radius: 50%;
+            width: 60px;
+            padding: 2px;
+            height: 60px;
+            border: 2px solid #ff8501;
+            margin-right: 10px;
+        }
+
+        .story {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .post h5 img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .post h5 img,
+        .post h5 {
+            margin-bottom: 10px;
+        }
+
+        .post h5 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .post p strong {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .post {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <img src="https://assets.codepen.io/6060109/ig-logo.png" alt="Instagram Logo" width="90%">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a href="/dashboard" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-compass"></i> Explore</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-heart"></i> Notifications</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-user"></i> Profile</a></li>
+            <li class="nav-item"> <a href="/viewblogpage"  class="nav-link"> <i class="fa-solid fa-face-smile"></i> Your Blogs</a></li>
+            <li class="nav-item"><a href="/addblogpage" class="nav-link"> <i class="fa-regular fa-square-plus"></i>Add Your Blogs</a></li>
+            <li class="nav-item"> <a href="/logoutuser" class="nav-link button"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></li>
+        </ul>
+    </div>
+
+
+    <div class="feed container">
+        <div class="story">
+            <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdWar_zaibogRn2L26cntXTiHneZVaZe5KyQ&s"
+                    alt="story"></p>
+            <img src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4xXfoC9_TYiRSwyRqd0RbMPD4hJ5r6xPW1w&s"
+                alt="story">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzvG7mz4HZTQBFVnTZ_cCWcQEWpuVP3pG6mA&s"
+                alt="story">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhK9030oFrQp0lol5SnSU1RBONqTVkJBBoog&s"
+                alt="story">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtcaf22mF4dpsWEwjrP7R8RSPmQToRBLQ6vw&s"
+                alt="story">
+            <img src="https://internationalwomensday.s3.us-west-2.amazonaws.com/images/IWD2025-theme-AccelerateAction-12.jpg"
+                alt="story">
+            <img src="https://i.pinimg.com/474x/c5/57/66/c55766288958e617f80790891f55203f.jpg" alt="story">
+            <img src="https://i.pinimg.com/474x/d2/2b/99/d22b9934f5719b869b247e008499fee3.jpg" alt="story">
+        </div>
+
+
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/ad/da/a0/addaa0aba9fa53bb2b8d68f93be6822e.jpg" alt="">|ω・`ﾉ Hi..
+            </h5>
+            <img src="https://i.pinimg.com/474x/d2/2b/99/d22b9934f5719b869b247e008499fee3.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/7f/3c/9a/7f3c9aacb1b89f26dcb9b95621eeaa2b.jpg   " alt="">Forid Akter
+            </h5>
+            <img src="https://i.pinimg.com/474x/78/e4/5e/78e45e4e431eb17e56913dd19a1a221b.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/c5/3c/60/c53c60c87aaf50926d31923f14603ed4.jpg" alt="">Marc Alexander
+            </h5>
+            <img src="https://i.pinimg.com/474x/23/ca/52/23ca524255af9368dfcebad445514d50.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/67/8e/ea/678eeaedda7dbe15cbad59937535564b.jpg" alt="">mirzi azeez
+            </h5>
+            <img src="https://i.pinimg.com/474x/c5/57/66/c55766288958e617f80790891f55203f.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/ea/f8/99/eaf8993b340e41e82725bdaee866ce7a.jpg" alt="">miño_.x0_69
+            </h5>
+            <img src="https://i.pinimg.com/474x/d9/f2/76/d9f276e4527c0cde87fb374f74f62a3b.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/f9/5a/08/f95a089edf90d1fcf161fa70efbc0edb.jpg" alt="">sca Velazquez
+            </h5>
+            <img src="https://i.pinimg.com/474x/8a/6a/fa/8a6afae5523aae92fe856cbf36310dd2.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/26/2a/b3/262ab3967b63308b41d3f224defde2f5.jpg" alt="">ʕ⁎̯͡⁎ʔ༄</h5>
+            <img src="https://i.pinimg.com/474x/73/4d/86/734d860dab4dd08fa03987cb6cf4f8f0.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/37/17/6c/37176c8e369805fddc4286871b1b7279.jpg" alt="">alison ray
+            </h5>
+            <img src="https://i.pinimg.com/474x/43/f2/ce/43f2cea887621c38c6049854177ae004.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/57/39/c5/5739c5c9ac3709623de98c2e926bbf51.jpg" alt="">Getze
+                _.90 </h5>
+            <img src="https://i.pinimg.com/474x/a1/ab/9c/a1ab9cfae2ee2931604699a9c1e14542.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/a1/ab/9c/a1ab9cfae2ee2931604699a9c1e14542.jpg" alt="">Username</h5>
+            <img src="https://i.pinimg.com/474x/a7/6c/69/a76c699b8f0eeb753d5afe9a621ac6a1.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+        <div class="post">
+            <h5><img src="https://i.pinimg.com/474x/71/9a/47/719a47f0d696c97322f55a44f48f63cd.jpg" alt="">Username</h5>
+            <img src="https://i.pinimg.com/474x/90/4c/d6/904cd690c0226fdb1b93dcf417a3b9cb.jpg" alt="post">
+            <p><strong><i class="fas fa-heart"></i> Liked by user1 and others</strong></p>
+            <p>Some caption text...</p>
+            <input type="text" class="form-control" placeholder="Add a comment...">
+        </div>
+    </div>
+
+    <div class="suggestions">
+        <h5>Suggestions For You</h5>
+        <div class="d-flex align-items-center mb-2">
+            <img src="https://i.pinimg.com/474x/78/e4/5e/78e45e4e431eb17e56913dd19a1a221b.jpg" class="profile-img"
+                alt="profile">
+            <p class="ms-2 mt-3">@Book_.sAndhy <br> Andhy</p>
+            <a href="#" class="ms-auto">Follow</a>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <img src="https://i.pinimg.com/474x/8a/f1/62/8af162923e8c89b2462a4ea535c1128d.jpg" class="profile-img"
+                alt="profile">
+            <p class="ms-2 mt-3">@xx_.reetu <br> rieee</p>
+            <a href="#" class="ms-auto">Follow</a>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <img src="https://i.pinimg.com/474x/ce/c0/91/cec0910eff579f025cd54c4064e95e93.jpg" class="profile-img"
+                alt="profile">
+            <p class="ms-2 mt-3">@Vincen.00 <br> Soren</p>
+            <a href="#" class="ms-auto">Follow</a>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <img src="https://i.pinimg.com/474x/76/40/bd/7640bd56a658c0edc6284bb11f37c491.jpg" class="profile-img"
+                alt="profile">
+            <p class="ms-2 mt-3">@Thrive_nikiee09 <br> nikiee </p>
+            <a href="#" class="ms-auto">Follow</a>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <img src="https://i.pinimg.com/736x/e3/88/1c/e3881c700c239738f59ae32eb9f8da54.jpg" class="profile-img"
+                alt="profile">
+            <p class="ms-2 mt-3">@Desig_nerhy_45 <br> gnerhy</p>
+            <a href="#" class="ms-auto">Follow</a>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <img src="https://i.pinimg.com/474x/72/99/e7/7299e74619508d45be660ba4aca54138.jpg" class="profile-img"
+                alt="profile">
+            <p class="ms-2 mt-3">@chirag Thakkar<br> c.Thakkar</p>
+            <a href="#" class="ms-auto">Follow</a>
+        </div>
+    </div>
+</body>
+
+</html>
