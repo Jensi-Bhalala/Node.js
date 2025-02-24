@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>Add Movie</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .form-main-s {
+            font-family: sans-serif;
+            background: url('https://i.ytimg.com/vi/AWZ-ULleQ0Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDlq9vdbhFHD5shtAo-0KQZYtSbRQ');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #E2DFD0;
+            text-align: center;
+            padding: 60px 0;
+            margin: 0;
+        }
+
+        .form-main {
+            background: #2D1B2E;
+            padding: 30px;
+            border-radius: 15px;
+            width: 45%;
+            margin: auto;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+            transition: 0.3s ease-in-out;
+            border: 2px solid #9A506D;
+        }
+
+        h2 {
+            color: #E8B4B8;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            font-family: 'Georgia', serif;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #E8B4B8;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 96%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #E8B4B8;
+            background: #4A1F38;
+            color: #E2DFD0;
+            font-size: 16px;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="file"]:focus {
+            border-color: #FF97A3;
+            box-shadow: 0px 0px 8px #FF97A3;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .checkbox-group label {
+            font-size: 16px;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: #793c60;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #E8B4B8;
+        }
+
+        .checkbox-group label:hover {
+            background: #9A506D;
+            color: white;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.3);
+            accent-color: #E8B4B8;
+        }
+
+        input[type="submit"] {
+            background: #9A506D;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 12px;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        input[type="submit"]:hover {
+            background: #C47A8D;
+            box-shadow: 0px 0px 15px #FF97A3;
+        }
+
+        a {
+            color: #FF97A3;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+        }
+
+        a:hover {
+            color: #E8B4B8;
+            text-shadow: 0px 0px 10px #f8f8f8;
+        }
+
+
+
+        /* Slider Start */
+        .slider-images {
+            padding: 135px 0;
+            background: #2D1B2E;
+            text-align: center;
+        }
+
+        .slider-images-main {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .slider-item {
+            position: relative;
+            width: 190px;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* Image Styling */
+        .slider-item img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+        }
+
+        /* Hover Effect */
+        .slider-item:hover {
+            transform: scale(1.1) translateY(-5px);
+            /* Zoom and lift */
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.23);
+            /* Soft shadow */
+            transition: 0.9s;
+        }
+
+        /* Glowing Border */
+        .slider-item:hover img {
+            filter: brightness(1.1);
+            /* Slight brightness increase */
+            transition: 0.9s;
+        }
+
+        .slider-item:hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgb(255, 255, 255);
+            /* Glowing border */
+            border-radius: 10px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            transition: 0.9s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .slider-item {
+                width: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-item {
+                width: 100px;
+            }
+        }
+
+        .faq {
+            background-color: #C47A8D;
+        }
+
+        .faq-main {
+            background-color: transparent;
+            color: #f8f8f8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: #2D1B2E;
+            /* Black background */
+            color: #fff;
+            /* White text color */
+            padding: 70px 0 70px 0;
+
+        }
+
+        /* Accordion Component Styling */
+        .accordion-button {
+            background-color: #333;
+            /* Dark background for accordion button */
+            color: #fff;
+            /* White text color for accordion button */
+            border: none;
+            /* Remove default border */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            /* Remove focus outline */
+        }
+
+        /* Hover effect for the accordion button */
+        .accordion-button:hover {
+            background-color: #754256;
+            /* Lighter dark background on hover */
+        }
+
+        /* Styling for expanded accordion body */
+        .accordion-body {
+            background-color: #2D1B2E;
+            /* Slightly darker background for body */
+            color: #fff;
+            /* White text for accordion content */
+            padding: 20px;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #5f3445;
+            color: #fff;
+        }
+
+        .accordion-header {
+            background-color: transparent;
+            border-radius: 5px;
+        }
+
+        .accordion-header button {
+            font-size: 27px;
+        }
+
+        .footer h6 {
+            background-color: #2D1B2E;
+            color: #ffffff;
+            align-items: center;
+            margin-bottom: 0px;
+        }
+
+        .footer h6:hover {
+            color: #E8B4B8;
+            text-shadow: 0px 0px 10px #f8f8f8;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- form start  -->
+    <div class="form-main-s">
+        <div class="header-main">
+            <div class="col-12">
+                <div class="header-img d-flex">
+                    <div class="col-6 d-flex align-items-strat justify-content-start">
+                        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production/consent/87b6a5c0-0104-4e96-a291-092c11350111/01938dc4-59b3-7bbc-b635-c4131030e85f/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+                            alt="" width="210px"
+                            style="background-color:#2D1B2E;border-radius: 10px;margin-bottom: 70px;margin-left: 90px;">
+                    </div>
+                    <div class="col-5">
+                        <div class="header-button d-flex align-items-end justify-content-end">
+                            <button type="button" class="btn btn-lg" width="100px"
+                                style="height: 55px;background-color: #2D1B2E;color:#E8B4B8;font-weight: 700;"><a
+                                    href="/crud">Watch Now</a></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- <div class="row"> -->
+        <div class="container">
+            <div class="col-12">
+                <div class="form-main">
+                    <h2>Add Movie</h2>
+                    <form action="/crud/insertrecord" method="post" enctype="multipart/form-data">
+
+                        <div class="form-group">
+                            <label for="name">Movie Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter Movie Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Movie Description</label>
+                            <input type="text" id="description" name="discription" placeholder="Enter Description">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Movie Type</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="hobby" value="Horror"> Horror</label>
+                                <label><input type="checkbox" name="hobby" value="Action"> Action</label>
+                                <label><input type="checkbox" name="hobby" value="Comedy"> Comedy</label>
+                                <label><input type="checkbox" name="hobby" value="History"> History</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="upload">Movie Image</label>
+                            <input type="file" id="upload" name="upload">
+                        </div>
+
+                        <input type="submit" value="Add Movie">
+                    </form>
+                    <a href="/crud">View All Movies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form end  -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
